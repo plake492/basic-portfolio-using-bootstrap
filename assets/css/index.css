@@ -1,9 +1,9 @@
 #jumbotron {
     line-height: 2em;
-    background-color: rgba(132, 154, 191, 0.7);
+    background-color: rgba(132, 154, 191, 0.8);
     font-weight: bold;
     width: 100%;
-    padding: 10px 40px 10px 40px;
+    padding: 30px 60px 80x 60px;
     border-radius: 0;
 }
 #center {

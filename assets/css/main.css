@@ -1,18 +1,19 @@
 body {
-    padding-bottom: 50px
+    padding-bottom: 50px;
+    position: relative;
+    min-height: 100vh
 }
-.nav  {
+nav  {
     background-color: rgba(255, 200, 171, 0.5);
     display: flex;
     justify-content: space-evenly;
-
 }
     
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     margin-top: 20px;
-    background-color: rgba(129, 151, 188, 0.5) ;
+    background-color: rgba(129, 151, 188, 0.7) ;
     width:100%;
     text-align: center;
     padding: 10px 0 10px 0;
