@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <header>Answer the Questions or die</header>
+    <div id="question"></div>
+    <button onclick="ask()">begin</button>
+
+    <script>
+    
+    const questionArr = [
+        {q: "is this earth?", a: "t"},
+        {q: "is this the moon?", a: "f"},
+        {q: "is this mars?", a: "f"},
+        {q: "is this space?", a: "f"},
+    ];
+    correct = 0;
+    wrong = 0;
+
+ask = () => {
+    for (let i = 0; i < questionArr.length; i++) {
+
+        $('#question').text(questionArr[i].q)
+
+        let answer = event.key
+        console.log(answer)
+        
+        if (answer === questionArr[i].a) {
+            alert("Right")
+            correct++
+        } else {
+            alert("You fucking tard")
+            wrong++
+        }
+    }
+
+}
+
+    
+    
+    </script>
+    
+</body>
+</html>

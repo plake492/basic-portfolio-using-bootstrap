@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- The scope attribute specifies that this is a header for a column -->
+          <th scope="col">Movie Name</th>
+          <th scope="col">Year</th>
+          <th scope="col">Actors</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Interstellar</td>
+          <td>2014</td>
+          <td>Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow</td>
+        </tr>
+        <!-- Insert additional movie rows here -->
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    // The below code fills in the first row of the table
+    var movie = "Mr. Nobody";
+    var movie2 = "Blade+Runner"
+    var movie3 =  "Good+Will+Hunting"
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
+
+
+    const getMovie = () => {
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+        createRow(response)
+    });
+  }
+
+    const createRow = response => {
+      const newRow = `<tr>
+      <td>${response.Title}</td>
+      <td>${response.Year}</td>
+      <td>${response.Actors}</td>
+      </tr>`
+      $('tbody').append(newRow)
+    }
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      createRow(response)
+    });
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      createRow(response)
+    });
+
+
+    // Repeat the above logic to add rows for two more movies of your choice
+
+    // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
+
+
+      // const title = response.Title
+      // const year = response.Year
+      // const actors = response.Actors
+
+      // var tRow = $("<td>" + title + "</td>");
+      // var yRow = $("<td>" + year + "</td>");
+      // var aRow = $("<td>" + actors + "</td>");
+ 
+      // $('tbody').append(tRow);
+      // $('tbody').append(yRow);
+      // $('tbody').append(aRow);
+
+      // SOLUTION 
+
+      // const newRow = $('<tr>');
+      // const newBlock = $('<td>')
+      // const yearBlock = $('<td>');
+      // const actorsBlock = $('<td>');
+      // titleBlock.text(response.Title);
+      // yearBlock.text(response.Year);
+      // actorsBlock.text(response.Actors)
+      // $('tbody').append(newRow)
+
+
+      //OTHER SOLUTOn
+
+      // const {Title, Year, Actors } = response
+      // the same as
+      // const title = response.Title 
+      // const newRow = `<tr>
+      // <td>${response.Title}</td>
+      // <td>${response.Year}</td>
+      // <td>${response.Actors}</td>
+      // </tr>`
+      // $('tbody').append(newRow)
+
+  </script>
+</body>
+
+</html>
+

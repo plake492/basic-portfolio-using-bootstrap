@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>To Do App!</title>
+
+    <style>
+      #todo-item {
+        font-weight: 700;
+        font-size: 2em;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Title -->
+    <h1>My To Do's!</h1>
+
+    <!-- Input Form -->
+    <form>
+      <span id="todo-item">To Do Item: <input id="to-do" type="text" ><input id="add-to-do" value="Add Item" type="submit"></span>
+    </form>
+
+    <hr>
+
+    <div id="to-dos"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    let todos = []
+    var toDoCount = 0;
+
+    $("#add-to-do").on("click", function(event) {
+      event.preventDefault();
+      var toDoTask = $("#to-do").val().trim();
+      todos.push(toDoTask)
+      renderTodos()         
+      $('#to-dos').val("")
+
+
+    });
+
+    const renderTodos = () => {
+      $('#to-dos').empty()
+      
+      todos.forEach((todo, index) => {
+           const template = `
+            <p>
+              <button class="checkbox" data-to-do="${index}"></button>
+              ${todo}
+            </p>
+           `;
+           $('#to-dos').append(template)
+      });
+    }
+
+
+    $(document.body).on("click", ".checkbox", function() {
+    var toDoNumber = $(this).attr("data-to-do");
+    todos.splice(toDoNumber, 1)   
+    renderTodos()   
+
+      
+    });
+
+    const saveTodos = () => {
+      localStorage.setItem("todos", JSON.stringify(todos))      
+    };
+
+    </script>
+
+  </body>
+
+</html>

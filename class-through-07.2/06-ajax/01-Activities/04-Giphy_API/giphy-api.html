@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+
+
+<body>
+
+  <style>
+
+    /* div {
+      width:200px;
+      height:auto;
+    } */
+
+  </style>
+  
+  <div></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=7h1vvQHXMixjDPQUyFAyvM6d9E60ANw4&q=cats&limit=99&offset=10";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+
+      let gif = `<img src="${response.data[0].images.original.url}">`
+      $('div').append(gif)
+
+      let gif1 = `<img src="${response.data[8].images.original.url}">`
+      $('div').append(gif1)
+
+      let gif2 = `<img src="${response.data[4].images.original.url}">`
+      $('div').append(gif2)
+
+      let gif3 = `<img src="${response.data[25].images.original.url}">`
+      $('div').append(gif3)
+    });
+  </script>
+
+</body>
+
+</html>
