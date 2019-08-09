@@ -2,8 +2,9 @@ body {
     padding-bottom: 70px;
 }
 .container {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding: 25px 45px 25px 45px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     line-height: 2em;
     background-color: rgba(132, 154, 191, 0.7);
     font-weight: bold;
