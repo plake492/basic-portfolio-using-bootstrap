@@ -5,4 +5,4 @@ Here is the link: https://plake492.github.io/plake_portfolio/
 
 <br>
 
-This Portfolio was created using (Bootstrap)[https://getbootstrap.com/docs/4.3/getting-started/introduction/]
+This Portfolio was created using [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
