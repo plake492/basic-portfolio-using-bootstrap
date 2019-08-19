@@ -1,5 +1,4 @@
-# basic-portfolio-using-bootstrap
-
+# Patrick Lake Portfolio
 Here is my portfolio page where you can see some of my different projects. 
 Here is the link: https://plake492.github.io/plake_portfolio/
 
